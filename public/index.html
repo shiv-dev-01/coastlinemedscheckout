@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="checkout" />
+  <link rel="apple-touch-icon" href="" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <script src="%PUBLIC_URL%/cm-attribution.js"></script>
+  <!-- Google tag (gtag.js) GA4. Same ID as the marketing site so checkout stays in one session. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM1HWM3138"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var cmHost = window.location.hostname;
+    var cmOnCoastline = cmHost === "coastlinemeds.com" || cmHost.endsWith(".coastlinemeds.com");
+    gtag('config', 'G-RM1HWM3138', {
+      send_page_view: false,
+      cookie_domain: cmOnCoastline ? '.coastlinemeds.com' : 'auto',
+      page_location: window.location.origin + window.location.pathname
+    });
+  </script>
+  <!-- Meta Pixel. PageView and InitiateCheckout are sent from the SPA router, with no customer data. -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1449418673442039');
+  </script>
+  <script src="https://cdn.sticky.io/jssdk/stickyio-sdk.js"></script>
+  <title>coastlinemeds</title>
+</head>
+<body>
+  <noscript>checkout</noscript>
+  <div id="root"></div>
+</body>
+</html>
